@@ -270,7 +270,7 @@ build: openzwave/.lib/
 	${PYTHON_EXEC} setup-lib.py build
 
 openzwave:
-	git clone git://github.com/OpenZWave/open-zwave.git openzwave
+	: # git clone git://github.com/OpenZWave/open-zwave.git openzwave
 
 openzwave/.lib/: openzwave
 	#sed -i -e '253s/.*//' openzwave/cpp/src/value_classes/ValueID.h
@@ -368,7 +368,7 @@ venv2:
 	venv2/bin/pip install nose
 	-rm -f src-lib/libopenzwave/libopenzwave.cpp
 	$(MAKE) PYTHON_EXEC=venv2/bin/python install
-	
+
 venv3:
 	virtualenv --python=python3 venv3
 	venv3/bin/pip install cython
